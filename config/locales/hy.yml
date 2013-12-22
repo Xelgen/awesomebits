@@ -77,9 +77,9 @@ hy:
       byline: //"By %{name}"
       trustees:
         header: //Meet the Trustees
-        about: //About Us
+        about: Մեր մասին//About Us
         news: //"%{name} News"
-      apply-for-grant: //Apply For a Grant
+      apply-for-grant: Դիմել դրամաշհնորհի//Apply For a Grant
     edit:
       title: //Edit chapter information
     new:
