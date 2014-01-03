@@ -97,36 +97,36 @@ hy:
   projects:
     project:
       awesome: //Awesome
-      delete: //Delete this project
+      delete: Ջնջել այս նախագիծը//Delete this project
       see-the-rest: //See the rest →
       view-public-page: //View the public page →
-      edit: //Edit Project →
-      confirm-delete: //Really delete this?
+      edit: Խմբագրել նախագիծը//Edit Project →
+      confirm-delete: Իրո՞ք ջնջել։//Really delete this?
       winner: //"Winner for %{name}"
       about-me: //"A little about me:"
       about-project: //"Here's my idea:"
       use-for-money: //"How I will use the money:"
       not-answered: //Not Answered
-      images: //"Images:"
+      images: Պատկերներ՝//"Images:"
       image: //"Image #%{index}"
     new:
       title: //Are you ready to get Awesome!?
       description: //Just fill out the application below with information about your self and the details of your project.
-      apply: //Apply
+      apply: Դիմել//Apply
     form:
-      save: //Save
+      save: Հիշել //Save
       image-notes: //The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
     index:
-      filter-button: //Filter
+      filter-button: Զտել //Filter
       search: որոնել//search
       start-date: //start date
       end-date: //end date
       short-list-filter: //My short-list
       title: //"Projects for %{name}"
-      export-projects: //Export Filtered
-      export-all-projects: //Export All From Date Range
+      export-projects: Արտահանել ընտրածը//Export Filtered
+      export-all-projects: Արտահանել բոլորը նշված ժամանակաշրջանում//Export All From Date Range
     public_show:
-      edit: //Edit Project
+      edit: Խմբագրել//Edit Project
       byline-html: //"<span class='chapter-name'>%{chapter_name}</span> project created by <span class='project-starter'>%{submitter_name}</span>"
       funder-html: //"Funded by <span class='chapter-name'>%{name}</span>"
       submitted-to-html: //"Project application submitted to <span class=''>%{name}</span>"
