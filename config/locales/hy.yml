@@ -7,30 +7,30 @@ hy:
       funding: "%B, %Y"
   flash:
     permissions:
-      must-be-logged-in: //You must be logged in.
-      must-be-admin: //You must be an administrator.
-      cannot-remove-user: //You are not allowed to remove this user.
-      must-be-dean-or-admin: //You must be an admin or dean to access this page.
-      must-have-chapter: //Your account is not associated with any chapters.
-      cannot-view-finalists: //"You are not permitted to see this."
-      cannot-invite: //"You do not have permission to invite others."
-      cannot-modify-account: //"You do not have permission to modify this account."
-      cannot-mark-winner: //"You cannot mark that a winner."
+      must-be-logged-in: "Դուք պետք է մուտք գործած լինեք։"//You must be logged in.
+      must-be-admin: "Դուք պետք է ադմին լինեք։" //You must be an administrator.
+      cannot-remove-user: "Դուք իրավունք չունեք այս օգտագործողին հեռացնել։" //You are not allowed to remove this user.
+      must-be-dean-or-admin: "Այս էջը դիտելու համար դուք պետք է ադմին կամ ղեկավար լինեք։" //You must be an admin or dean to access this page.
+      must-have-chapter: "Ձեր հաշիվը կապակցված չէ որևէ մասնաճյուղի հետ։" //Your account is not associated with any chapters.
+      cannot-view-finalists: "Դուք իրավասու չեք այս էջը դիտել։" //"You are not permitted to see this."
+      cannot-invite: "Դուք այլոց հրավիրելու իրավունք չունեք։"//"You do not have permission to invite others."
+      cannot-modify-account: "Դուք այս հաշիվը փոփոխելու իրավունք չունեք։" //"You do not have permission to modify this account."
+      cannot-mark-winner: "Դուք չեք կարող հաղթող հայտարարել այս նախագիծը։" //"You cannot mark that a winner."
     votes:
-      already-voted: //"Vote already exists for this project"
-      already-deleted: //"Vote has already been deleted"
+      already-voted: "Դուք արդեն քվերակել եք այս նախագծի օգտին։" //"Vote already exists for this project"
+      already-deleted: "Քվեն արդեն հեռացված է։" //"Vote has already been deleted"
     applications:
-      thanks: //"Thanks for applying!"
+      thanks: "Շնորհակալությո՛ւն դիմելու համար։" //"Thanks for applying!"
     acceptances:
-      cannot: //"Could not accept the invitation"
+      cannot: "Հնարավոր չէ ընդունել հրավերը։" //"Could not accept the invitation"
   layouts:
     application:
-      main-header: //The Awesome Foundation
+      main-header: "Օսմ հիմնադրամ"//The Awesome Foundation
       apply: Դիմել
       dashboard: Վահանակ
-      blog: 
+      blog: Բլոգ
       chapters: Մասնաճյուղեր
-      chapter_header: //Awesome Everywhere!
+      chapter_header: Օսմը ամենուրեք//Awesome Everywhere!
       home: Գլխավոր
       about_us: Մեր մասին
       about_contact: Մեր մասին և կապ
@@ -53,9 +53,9 @@ hy:
       title: //Forwarding the interest of Awesome in the universe, $1,000 at a time.
       by: //"By %{name}"
       what:
-        header: //Ֆինանսավորո՞ւմ է պետք
-        body-html: //"Have a crazy brilliant idea that needs funding? We award <strong>$1,000 grants every month</strong>. It couldn't be simpler! Your idea is yours alone. We don't want a stake in it. We just want to help you make it happen!"
-      call-to-action: //Apply now for an Awesome Foundation grant!
+        header: "Ֆինանսավորո՞ւմ է պետք" //
+        body-html: "Պայծառ և խենթ մտահղացում ունեք, որն իրականացնելու համար գումա՞ր է պետք։ Մենք տրամադրում ենք <strong>1000 ԱՄՆ դոլար, ամեն ամիս</strong>։ Ամեն ինչ շատ պարզ է։ Ձեր մտահղացումը միայն ձերն է, մենք պարզապես ուզում ենք օգնել ձեզ այն իրականությո՛ւն դարձնել։" //"Have a crazy brilliant idea that needs funding? We award <strong>$1,000 grants every month</strong>. It couldn't be simpler! Your idea is yours alone. We don't want a stake in it. We just want to help you make it happen!"
+      call-to-action: "Դիմեք Օսմ հիմնադրամի դրամաշնորհի։" //Apply now for an Awesome Foundation grant!
       who:
         header: Awesome is Everywhere!
         body: //The Awesome Foundation for the Arts and Sciences is an ever-growing, worldwide network of people devoted to forwarding the interest of awesomeness in the universe. Created in the long hot summer days of 2009 in Boston, the Foundation distributes a series of monthly $1,000 grants to projects and their creators. The money is pooled together from the coffers of ten or so self-organizing “micro-trustees” and given upfront in cash, check, or gold doubloons. The chapters are autonomous and organized by the trustees around geographic areas or topics of interest.
@@ -78,31 +78,31 @@ hy:
       trustees:
         header: //Meet the Trustees
         about: Մեր մասին//About Us
-        news: //"%{name} News"
+        news: "%{name} նորություններ"//"%{name} News"
       apply-for-grant: Դիմել դրամաշհնորհի//Apply For a Grant
     edit:
-      title: //Edit chapter information
+      title: "Խմբագրել մասնաճյուղի էջը" //Edit chapter information
     new:
-      title: //Create a new chapter
+      title: "Նոր մասնաճյուղ հիմնել" //Create a new chapter
   finalists:
     index:
       title: //"Finalists for %{name}"
-      filter-button: //Filter
-      start-date: //start date
-      end-date: //end date
+      filter-button: "Զտել" //Filter
+      start-date: "Սկսած"//start date
+      end-date: "Վերջացրած" //end date
       table:
-        title: //Title
-        id: //ID
-        votes: //Votes
+        title: "Անվանում" //Title
+        id: "Համար" //ID
+        votes: "Քվե" //Votes
   projects:
     project:
       awesome: //Awesome
       delete: Ջնջել այս նախագիծը//Delete this project
-      see-the-rest: //See the rest →
+      see-the-rest: "Կարդալ ավելին →"//See the rest →
       view-public-page: //View the public page →
       edit: Խմբագրել նախագիծը//Edit Project →
       confirm-delete: Իրո՞ք ջնջել։//Really delete this?
-      winner: //"Winner for %{name}"
+      winner: "%{name}ի հաղթող"//"Winner for %{name}"
       about-me: //"A little about me:"
       about-project: //"Here's my idea:"
       use-for-money: //"How I will use the money:"
@@ -205,15 +205,15 @@ hy:
       chapter:
         name: //Name
         slug: //Name in the URL
-        twitter_url: //Twitter URL
-        facebook_url: //Facebook URL
-        blog_url: //Blog URL
-        rss_feed_url: //RSS Feed URL
+        twitter_url: Թվիթերի հասցե//Twitter URL
+        facebook_url: Ֆեյսբուքի հասցե//Facebook URL
+        blog_url: Բլոգի հասցե//Blog URL
+        rss_feed_url: ՌՍՍ հոսքի հասցե//RSS Feed URL
         description: Նկարագրություն//Description
-        extra_question_1: //Extra question 1
-        extra_question_2: //Extra question 2
-        extra_question_3: //Extra question 3
-        submit: //Submit
+        extra_question_1: Հավելյալ հարց 1//Extra question 1
+        extra_question_2: Հավելյալ հարց 2//Extra question 2
+        extra_question_3: Հավելյալ հարց 3//Extra question 3
+        submit: Ուղարկել //Submit
       user:
         first_name: Անուն//First name
         last_name: Ազգանուն//Last name
