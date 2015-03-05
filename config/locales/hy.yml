@@ -25,7 +25,7 @@ hy:
       cannot: "Հնարավոր չէ ընդունել հրավերը։" //"Could not accept the invitation"
   layouts:
     application:
-      main-header: "Օսմ հիմնադրամ"//The Awesome Foundation
+      main-header: "Awesome Հիմնադրամ"//"The Awesome Foundation"
       apply: Դիմել
       dashboard: Վահանակ
       blog: Բլոգ
@@ -36,57 +36,57 @@ hy:
       about_contact: Մեր մասին և կապ
       faq: ՀՏՀ
       want_to_help: Ներգրավվել
-      sign-out: Դուրս գալ
-      sign-in: Մտնել
+      sign-out: "Դուրս գալ"
+      sign-in: "Մուտք"
     sidebar:
       projects: Նախագծեր
       finalists: Հաղթողներ
       trustees: Trustees
       members: Անդամներ
-      create-chapter: Ստեղծել մասնաճյուղ
-      invite-trustee: Հրավիրել անդամ
-      edit-profile: Խմբագրել իմ էջը
-      edit-chapter-profile: Խմբագրել մասնաճյուղի էջը//Edit Chapter Profile
-      view-all-users: Դիտել բոլոր անդամներին //View all Users
+      create-chapter: "Ստեղծել մասնաճյուղ"
+      invite-trustee: "Հրավիրել հովանավոր"
+      edit-profile: "Խմբագրել իմ էջը"
+      edit-chapter-profile: "Խմբագրել մասնաճյուղի էջը" //"Edit Chapter Profile"
+      view-all-users: "Դիտել բոլոր անդամներին" //"View all Users"
   home:
     index:
       title: //Forwarding the interest of Awesome in the universe, $1,000 at a time.
-      by: //"By %{name}"
+      by: "Հեղինակ` %{name}" //"By %{name}"
       what:
         header: "Ֆինանսավորո՞ւմ է պետք" //
         body-html: "Պայծառ և խենթ մտահղացում ունեք, որն իրականացնելու համար գումա՞ր է պետք։ Մենք տրամադրում ենք <strong>1000 ԱՄՆ դոլար, ամեն ամիս</strong>։ Ամեն ինչ շատ պարզ է։ Ձեր մտահղացումը միայն ձերն է, մենք պարզապես ուզում ենք օգնել ձեզ այն իրականությո՛ւն դարձնել։" //"Have a crazy brilliant idea that needs funding? We award <strong>$1,000 grants every month</strong>. It couldn't be simpler! Your idea is yours alone. We don't want a stake in it. We just want to help you make it happen!"
-      call-to-action: "Դիմեք Օսմ հիմնադրամի դրամաշնորհի։" //Apply now for an Awesome Foundation grant!
+      call-to-action: "Դիմեք Awesome Հիմնադրամի դրամաշնորհի։" //"Apply now for an Awesome Foundation grant!"
       who:
-        header: Awesome is Everywhere!
+        header: "Awesome-ն ամենո՛ւր է" //"Awesome is Everywhere!"
         body: //The Awesome Foundation for the Arts and Sciences is an ever-growing, worldwide network of people devoted to forwarding the interest of awesomeness in the universe. Created in the long hot summer days of 2009 in Boston, the Foundation distributes a series of monthly $1,000 grants to projects and their creators. The money is pooled together from the coffers of ten or so self-organizing “micro-trustees” and given upfront in cash, check, or gold doubloons. The chapters are autonomous and organized by the trustees around geographic areas or topics of interest.
       news:
-        header: //Awesome News!
+        header: Awesome նորություններ! //Awesome News!
         recent: Վերջին գրառումները բլոգում
-        events: Գալիք միջոցառումնե//Upcoming Events
+        events: Գալիք միջոցառումներ//Upcoming Events
       funding-html: "Տրվել է <em class='funding'>%{amount} ԱՄՆ դոլար</em>"//"<em class='funding'>$%{amount}</em> Granted"
       winner-count-html: "Ֆինանսավորվել է <em class='winners'>%{amount}</em> նախագիծ"//"<em class='winners'>%{amount}</em> projects funded"
       chapter-count-html: "<em class='chapters'>%{count}</em> մասնաճյուղ"//"<em class='chapters'>%{count}</em> Chapters"
-      country-count-html: "<em class='countries'>%{count}</em> երկիր//"<em class='countries'>%{count}</em> Countries"
+      country-count-html: "<em class='countries'>%{count}</em> երկիր" // "<em class='countries'>%{count}</em> Countries"
   chapters:
     index:
-      title: //Awesome is Everywhere
+      title: Awesome-ն ամենուր է //Awesome is Everywhere
     show:
-      edit: //Edit Chapter
-      recent_winners: //Recently funded projects
-      see_more: //See more Awesomeness
-      byline: //"By %{name}"
+      edit: Խմբագրել մասնաճյուղը//Edit Chapter
+      recent_winners: Վերջին ֆինանսավորված նախագծերը //Recently funded projects
+      see_more: Տեսնել ավելին //See more Awesomeness
+      byline: "Հեղինակ` %{name}"//"By %{name}"
       trustees:
-        header: //Meet the Trustees
+        header: Հովանավորներ //Meet the Trustees
         about: Մեր մասին//About Us
         news: "%{name} նորություններ"//"%{name} News"
-      apply-for-grant: Դիմել դրամաշհնորհի//Apply For a Grant
+      apply-for-grant: "Դիմել դրամաշհնորհի"//"Apply For a Grant"
     edit:
-      title: "Խմբագրել մասնաճյուղի էջը" //Edit chapter information
+      title: "Խմբագրել մասնաճյուղի տվյալները" //"Edit chapter information"
     new:
-      title: "Նոր մասնաճյուղ հիմնել" //Create a new chapter
+      title: "Ստեղծել նոր մասնաճյուղ" //"Create a new chapter"
   finalists:
     index:
-      title: //"Finalists for %{name}"
+      title: "%{name}-ի ֆինալիստները"//"Finalists for %{name}"
       filter-button: "Զտել" //Filter
       start-date: "Սկսած"//start date
       end-date: "Վերջացրած" //end date
@@ -96,57 +96,57 @@ hy:
         votes: "Քվե" //Votes
   projects:
     project:
-      awesome: //Awesome
+      awesome: Awesome //Awesome
       delete: Ջնջել այս նախագիծը//Delete this project
-      see-the-rest: "Կարդալ ավելին →"//See the rest →
-      view-public-page: //View the public page →
-      edit: Խմբագրել նախագիծը//Edit Project →
-      confirm-delete: Իրո՞ք ջնջել։//Really delete this?
-      winner: "%{name}ի հաղթող"//"Winner for %{name}"
-      about-me: //"A little about me:"
-      about-project: //"Here's my idea:"
-      use-for-money: //"How I will use the money:"
-      not-answered: //Not Answered
-      images: Պատկերներ՝//"Images:"
-      image: //"Image #%{index}"
+      see-the-rest: "Կարդալ ավելին →"//"See the rest →"
+      view-public-page: "Նայել հրապարակված էջը →" //"View the public page →"
+      edit: "Խմբագրել նախագիծը"//"Edit Project →"
+      confirm-delete: "Համոզվա՞ծ եք"//"Really delete this?"
+      winner: "%{name}-ի հաղթող"//"Winner for %{name}"
+      about-me: "Մի փոքր իմ մասին:"//"A little about me:"
+      about-project: "Ահա իմ մտահղացումը:"//"Here's my idea:"
+      use-for-money: "Ինչպես կօգտագործեմ գումարը։"//"How I will use the money:"
+      not-answered: "Պատասխան չկա"//Not Answered
+      images: "Պատկերներ:"//"Images:"
+      image: "Պատկեր #%{index}" //"Image #%{index}"
     new:
-      title: //Are you ready to get Awesome!?
-      description: //Just fill out the application below with information about your self and the details of your project.
+      title: "Դու պատրա՞ստ ես լինել Awesome" //"Are you ready to get Awesome!?"
+      description: Պարզապես լրացրու քո և նախագծի մանրամասների մասին://Just fill out the application below with information about your self and the details of your project.
       apply: Դիմել//Apply
     form:
       save: Հիշել //Save
-      image-notes: //The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
+      image-notes: "Արաջին նկարը կդիտարկվի որպես գլխավոր նկար: Այն կհամապատասխանեցվի %{dimensions} չափին:"//The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
     index:
-      filter-button: Զտել //Filter
-      search: որոնել//search
-      start-date: //start date
-      end-date: //end date
-      short-list-filter: //My short-list
-      title: //"Projects for %{name}"
-      export-projects: Արտահանել ընտրածը//Export Filtered
-      export-all-projects: Արտահանել բոլորը նշված ժամանակաշրջանում//Export All From Date Range
+      filter-button: "Զտել" //Filter
+      search: "որոնել"//search
+      start-date: "սկիզբ"//start date
+      end-date: "ավարտ"//end date
+      short-list-filter: "Իմ հավանածները"//"My short-list"
+      title: "%{name}-ի նախագծերը" //"Projects for %{name}"
+      export-projects: "Արտահանել ընտրածը"//"Export Filtered"
+      export-all-projects: "Արտահանել բոլորը նշված ժամանակաշրջանում"//"Export All From Date Range"
     public_show:
-      edit: Խմբագրել//Edit Project
-      byline-html: //"<span class='chapter-name'>%{chapter_name}</span> project created by <span class='project-starter'>%{submitter_name}</span>"
-      funder-html: //"Funded by <span class='chapter-name'>%{name}</span>"
-      submitted-to-html: //"Project application submitted to <span class=''>%{name}</span>"
+      edit: Խմբագրել նախագիծը//Edit Project
+      byline-html:"<span class='chapter-name'>%{chapter_name}</span> նախագիծը ստեղծված է <span class='project-starter'>%{submitter_name}-ի կողմից</span>" //"<span class='chapter-name'>%{chapter_name}</span> project created by <span class='project-starter'>%{submitter_name}</span>"
+      funder-html: "Ֆինանսավորվել է <span class='chapter-name'>%{name}</span>-ի կողմից" //"Funded by <span class='chapter-name'>%{name}</span>"
+      submitted-to-html: "Նախագիծը ուղարկված է <span class=''>%{name}</span> -ին" //"Project application submitted to <span class=''>%{name}</span>"
       description:
-        header: //Project Description
-      feed-title: //Recent Posts
+        header: Նախագծի նկարագիրը//Project Description
+      feed-title: Վերջին պոստերը //Recent Posts
     show:
-      back-to: //'Back to <a href="%{url}">%{name}</a>'
+      back-to: 'Ետ դեպի <a href="%{url}">%{name}</a>'//'Back to <a href="%{url}">%{name}</a>'
   emails:
     invitation:
-      subject: //"You have been invited to the %{name} chapter of the Awesome Foundation!"
+      subject: "Դուք ստացել եք հրավեր Awesome հիմնադրամի %{name} մասնաճյուղից"//"You have been invited to the %{name} chapter of the Awesome Foundation!"
     welcome:
-      subject: //"Welcome to the %{name} chapter!"
+      subject: "Բարի գալու՛ստ %{name} մասնաճյուղ"//"Welcome to the %{name} chapter!"
     application:
       subject: Շնորհակալություն դիմելու համար//"Thanks for applying!"
   sessions:
     new:
-      sign-in: //Trustee and Dean Sign In
-      intro: //This section of the website is reserved for Awesome Foundation Trustees and Deans only. If you are a trustee and need access, please get in touch with your chapter's Dean directly.
-      forgot-password: Մոռացե՞լ եք գաղտնաբառը//Forgot your password?
+      sign-in: "Հովանավորների մուտք" //Trustee and Dean Sign In
+      intro: "Այս բաժինը նախատեսված է միայն հովանավորների համար: Եթե դուք հովանավոր եք, ապա դիմեք մասնաճյուղի կառավարչին` մուտքի համար"//"This section of the website is reserved for Awesome Foundation Trustees and Deans only. If you are a trustee and need access, please get in touch with your chapter's Dean directly."
+      forgot-password: "Մոռացե՞լ եք գաղտնաբառը" //"Forgot your password?"
   users:
     user:
       promote_to_dean: //Promote
@@ -160,29 +160,29 @@ hy:
       error_removing_user: //Error removing user
       remove_from_chapter: Հեռացնել//Remove
     edit:
-      title: //Edit user information
+      title: Խմբագրել օգտագործողի տվյալները //Edit user information
     index:
-      title: //Awesome Foundation Members
+      title: Awesome Հիմնադրամի անդամներ //Awesome Foundation Members
       name: Անուն//Name
       email: Էլ–փոստ//Email
       chapter: Մասնաճյուղ//Chapter
       role: Դեր//Role
       remove: Հեռացնել//Remove
-      dean: //Dean
+      dean: Կառավարիչ//Dean
       admin: Ադմին //Admin
   pages:
     about_us:
       title_tag: Մեր մասին//About Us
-      meta_description: //About the Awesome Foundation
+      meta_description: Awesome Հիմնադրամի մասին //About the Awesome Foundation
       meta_keywords:
-      headline: //"The Awesome Foundation"
+      headline: Awesome Հիմնադրամ//"The Awesome Foundation"
       sub_headline: //"For the Arts and Sciences and the advancement of Awesomeness in the universe."
-      our-story-title: //Our Story
+      our-story-title: "Մեր պատմությունը"//"Our Story"
       our-story: //"<p>We are an ever-growing, worldwide network of people devoted to forwarding the interest of awesomeness in the universe. Created in the long hot summer days of 2009 in Boston, the Foundation distributes a series of monthly $1,000 grants to projects and their creators. The money is pooled together from the coffers of ten or so self-organizing “micro-trustees” and given upfront in cash, check, or gold doubloons. The chapters are autonomous and organized by the trustees around geographic areas or topics of interest.</p>
     <p>The Foundation provides these grants with no strings attached and claims no ownership over the projects it supports. It is, in the words of one of our trustees, a micro-genius grant for flashes of micro-brilliance.</p>
     <p>Since its humble beginnings, many <a href=\"http://awesomefoundation.org/chapters/\">Awesome Foundation chapters have sprung up globally</a> to conserve, sustain, and support the worldwide ecosystem of awesomeness. Projects have included efforts in a wide range of areas including technology, arts, social good, and beyond.</p>
     <p><a href=\"http://www.youtube.com/watch?v=PPoYzyOn44M\">We’re still waiting for something with dinosaurs (hint, hint)</a>.</p>"
-      contact-title: Կապ//Contact Us
+      contact-title: "Կապ" //"Contact Us"
       contact: //"<p>You can drop us an email at <a href=\"mailto:contact@awesomefoundation.org\">contact@awesomefoundation.org</a>, follow us on Twitter at <a href=\"http://twitter.com/awesomefound\">@awesomefound</a>, or track us on Facebook <a href=\"http://www.facebook.com/awesomefoundation\">here</a>. If you’re interested in helping to start a chapter or joining an existing one if a spot opens up, great! <a href=\"http://spreadsheets2.google.com/a/awesomefoundation.org/viewform?hl=en&formkey=dFJwaXhNTFp6VG40clU3cFVfWFk0bXc6MQ\">Tell us about yourself here!</a></p>"
     faq:
       headline: //Super awesome info
@@ -196,19 +196,19 @@ hy:
         title: Նախագծի անվանում//Project title
         url: Նախագծի կայք//Project website
         current_photos-html: "Բեռնված պատկերներ <span>(քաշեք հերթականությունը փոխելու համար)</span>" //"Current images <span>(drag to re-order)</span>"
-        new_photos-html: Բեռնեք ձեր նապագծի պատկերները//"Upload images of your project"
+        new_photos-html: "Բեռնեք ձեր նապագծի պատկերները"//"Upload images of your project"
         chapter_id: Ո՞ր մասնաճյուղին եք դիմում//Select chapter to apply to
-        rss_feed_url: Նախագծի ՌՍՍ (RSS) ժապավեն//Project RSS feed url
+        rss_feed_url: Նախագծի RSS ժապավեն//Project RSS feed url
         about_me: Մի փոքր պատմեք ձեր մասին//Tell us a little about yourself
         about_project: Պատմեք ձեր հոյակապ նախագծի մասին//Tell us about your awesome project!
         use_for_money: Ինչպե՞ս կօգտագործեք գումարը։//How will you use the money?
       chapter:
-        name: //Name
-        slug: //Name in the URL
+        name: Անվանում//Name
+        slug: Անվանում հասցեի մեջ//Name in the URL
         twitter_url: Թվիթերի հասցե//Twitter URL
         facebook_url: Ֆեյսբուքի հասցե//Facebook URL
         blog_url: Բլոգի հասցե//Blog URL
-        rss_feed_url: ՌՍՍ հոսքի հասցե//RSS Feed URL
+        rss_feed_url: RSS հոսքի հասցե//RSS Feed URL
         description: Նկարագրություն//Description
         extra_question_1: Հավելյալ հարց 1//Extra question 1
         extra_question_2: Հավելյալ հարց 2//Extra question 2
@@ -228,10 +228,10 @@ hy:
         user_image: Նկար//User Image
     hints:
       project:
-        funded_description: //Only visible on the funded project page
+        funded_description: Միայն տեսանելի կլինի դրամաշհնորհի ստացած նախագծի էջին //Only visible on the funded project page
         rss_feed_url: //Links to posts from this feed will be displayed on the funded project page
       user:
-        user_image: //Set your user image at <a href="https://en.gravatar.com/site/signup/%{email}" target="_blank">gravatar.com</a> using your email address above
+        user_image: 'Տեղադրեք Ձեր նկարը <a href="https://en.gravatar.com/site/signup/%{email}" target="_blank">gravatar.com</a> վերը նշված էլ-փոստի համար' //'Set your user image at <a href="https://en.gravatar.com/site/signup/%{email}" target="_blank">gravatar.com</a> using your email address above'
   activerecord:
     errors:
       models:
