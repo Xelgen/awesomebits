@@ -17,7 +17,7 @@ end
 step 'a project was created on each of the last 7 days for my chapter' do
   @my_projects = []
   7.times do |x|
-    @my_projects << create(:project,
+    @my_projects << FactoryGirl.create(:project,
                            :chapter => @current_chapter,
                            :created_at => x.days.ago)
   end
@@ -26,29 +26,29 @@ end
 step 'a project was created on each of the last 50 days for my chapter and I voted for them all' do
   @my_projects = []
   50.times do |x|
-    @my_projects << create(:project,
+    @my_projects << FactoryGirl.create(:project,
                            :chapter => @current_chapter,
                            :created_at => x.days.ago)
 
-    create(:vote, :project => @my_projects.last, :user => @current_user)
+    FactoryGirl.create(:vote, :project => @my_projects.last, :user => @current_user)
   end
 end
 
 step 'a project was created on each of the last 7 days for one chapter' do
-  @my_chapter = create(:chapter)
+  @my_chapter = FactoryGirl.create(:chapter)
   @my_projects = []
   7.times do |x|
-    @my_projects << create(:project,
+    @my_projects << FactoryGirl.create(:project,
                            :chapter => @my_chapter,
                            :created_at => x.days.ago)
   end
 end
 
 step 'a project was created on each of the last 7 days for a different chapter' do
-  @other_chapter = create(:chapter)
+  @other_chapter = FactoryGirl.create(:chapter)
   @other_projects = []
   7.times do |x|
-    @other_projects << create(:project,
+    @other_projects << FactoryGirl.create(:project,
                               :chapter => @other_chapter,
                               :created_at => x.days.ago)
   end
@@ -58,15 +58,16 @@ step 'a project was created on each of the last 7 days for any chapter' do
   any_chapter = Chapter.find_by_name("Any") || raise("'Any' chapter not found")
   @any_projects = []
   7.times do |x|
-    @any_projects << create(:project,
-                            :chapter => any_chapter,
-                            :created_at => x.days.ago)
+    @any_projects << FactoryGirl.create(:project, {
+      :chapter => any_chapter,
+      :created_at => x.days.ago
+    })
   end
 end
 
 step 'I want to see my projects for the past 3 days' do
-  fill_in("end date", :with => Time.now.strftime("%Y-%m-%d"))
-  fill_in("start date", :with => (3.days.ago).strftime("%Y-%m-%d"))
+  fill_in("end date", :with => Time.now.utc.strftime("%Y-%m-%d"))
+  fill_in("start date", :with => (3.days.ago.utc).strftime("%Y-%m-%d"))
   click_button("Filter")
 end
 
@@ -93,7 +94,7 @@ end
 
 step 'I look at the projects for the "Any" chapter' do
   page.find(:css, "a.chapter-selection").click
-  page.find(:css, "ol.chapter-selector li a:contains('Any')").click
+  page.find(:css, "ol.chapter-selector li a", text: "Any").click
   @viewing_projects = @any_projects
 end
 
@@ -111,19 +112,17 @@ end
 
 step 'I view the project in the admin area' do
   visit(chapter_projects_path(@current_chapter))
-  title = find(:css, "a.title:contains('#{@project_title}')")
-  title.find(:xpath, "./../../..").find(:css, "a.see-more").click
 end
 
 step 'I should see the questions and my answers to them' do
-  question_1 = page.find(:css, ".project-description h2:contains('#{@extra_question_1}')").find(:xpath, "./..")
-  question_1.should have_css("p:contains('#{@extra_answer_1}')")
+  question_1 = page.find(:css, ".project-pitch h3", text: @extra_question_1).find(:xpath, "./..")
+  question_1.should have_css("p", text: @extra_answer_1)
 
-  question_2 = page.find(:css, ".project-description h2:contains('#{@extra_question_2}')").find(:xpath, "./..")
-  question_2.should have_css("p:contains('#{@extra_answer_2}')")
+  question_2 = page.find(:css, ".project-pitch h3", text: @extra_question_2).find(:xpath, "./..")
+  question_2.should have_css("p", text: @extra_answer_2)
 
-  question_3 = page.find(:css, ".project-description h2:contains('#{@extra_question_3}')").find(:xpath, "./..")
-  question_3.should have_css("p:contains('#{@extra_answer_3}')")
+  question_3 = page.find(:css, ".project-pitch h3", text: @extra_question_3).find(:xpath, "./..")
+  question_3.should have_css("p", @extra_answer_3)
 end
 
 step 'I go to the recently submitted project' do
@@ -132,15 +131,15 @@ end
 
 step 'there is/are :count winning project(s)' do |count|
   count = count.to_i
-  @projects = (1..count).map{|x| create(:project_with_rss_feed, :funded_on => x.days.ago) }
+  @projects = (1..count).map{|x| FactoryGirl.create(:project_with_rss_feed, :funded_on => x.days.ago) }
 end
 
 step 'there is 1 winning project in my chapter' do
-  @project = create(:winning_project, :chapter => @current_chapter)
+  @project = FactoryGirl.create(:winning_project, :chapter => @current_chapter)
 end
 
 step 'there are enough winning projects in my chapter to spread over two pages' do
-  create_list(:winning_project, Project.per_page + 1, :chapter => @current_chapter)
+  FactoryGirl.create_list(:winning_project, Project.per_page + 1, :chapter => @current_chapter)
 end
 
 step 'I edit that winning project' do
@@ -169,26 +168,26 @@ step 'I should see the page describing it and all its details' do
   page.should have_css(".project-details .chapter-name a:contains('#{project.chapter.name}')")
   page.should have_css(".project-details .project-starter:contains('#{project.name}')")
   page.should have_css(".project-details p:contains('#{project.about_project}')")
-  page.should have_css(".project-side-bar .funded-on:contains('(#{project.funded_on.strftime("%B, %Y")})')")
+  page.should have_css(".project-side-bar .funded-on:contains('(#{project.funded_on.strftime("%B %Y")})')")
   page.should have_css(".project-side-bar .project-site-link a[href='#{project.url}']")
 end
 
 step '5 projects have won for this chapter' do
   @winning_projects = (1..5).map do |x|
-    create(:project, :chapter => @current_chapter, :funded_on => x.days.ago)
+    FactoryGirl.create(:project, :chapter => @current_chapter, :funded_on => x.days.ago)
   end
 end
 
 step '5 projects have not won for this chapter' do
   @not_winning_projects = (1..5).map do |x|
-    create(:project, :chapter => @current_chapter)
+    FactoryGirl.create(:project, :chapter => @current_chapter)
   end
 end
 
 step '5 projects have won, but not for this chapter' do
-  @other_chapter = create(:chapter)
+  @other_chapter = FactoryGirl.create(:chapter)
   @winning_projects_for_other_chapter = (1..5).map do |x|
-    create(:project, :chapter => @other_chapter)
+    FactoryGirl.create(:project, :chapter => @other_chapter)
   end
 end
 
@@ -205,7 +204,7 @@ step 'I should see only those 5 winning projects for this chapter listed' do
 end
 
 step 'someone has submitted spam to my chapter' do
-  @spam_project = create(:project, :chapter => @current_chapter)
+  @spam_project = FactoryGirl.create(:project, :chapter => @current_chapter)
 end
 
 step 'I go to the projects list' do
@@ -231,7 +230,7 @@ end
 
 step 'that chapter has 5 winning projects' do
   @winning_projects = (1..5).map do |x|
-    p = build(:project, :chapter => @current_chapter, :funded_on => x.months.ago)
+    p = FactoryGirl.build(:project, :chapter => @current_chapter, :funded_on => x.months.ago)
     p.photos = [Photo.new(:image => File.new(Rails.root.join("spec", "support", "fixtures", "1.JPG")))]
     p.save
     p

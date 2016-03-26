@@ -15,7 +15,7 @@ module ProjectsHelper
       winnable_chapters = [@chapter]
     end
     winnable_chapters.map do |chapter|
-      link_to(t(".winner", :name => chapter.name), project_winner_path(project, :chapter_id => chapter.id), :remote => true, :method => (project.winner? ? :delete : :post), :class => "mark-as-winner chapter-#{chapter.id}")
+      link_to(I18n.t(".winner", name: chapter.name, scope: "projects.project"), project_winner_path(project, :chapter_id => chapter.id), :remote => true, :method => (project.winner? ? :delete : :post), :class => "mark-as-winner chapter-#{chapter.id}")
     end.join("").html_safe
   end
 
@@ -24,6 +24,24 @@ module ProjectsHelper
       'checked="checked"'.html_safe
     else
       ''
+    end
+  end
+
+  def s3_uploader_available?
+    ENV['AWS_BUCKET'].present?
+  end
+
+  def display_uploader?(uploader)
+    if s3_uploader_available?
+      if params[:uploader]
+        uploader.to_s == params[:uploader]
+
+      else
+        uploader.to_s == "s3"
+      end
+
+    else
+      uploader.to_s == "classic"
     end
   end
 end

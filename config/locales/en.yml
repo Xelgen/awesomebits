@@ -4,7 +4,10 @@ en:
     separator: "."
   date:
     formats:
-      funding: "%B, %Y"
+      default: "%Y-%m-%d"
+      funding: "%B %Y"
+  word:
+    inactive: Inactive
   flash:
     permissions:
       must-be-logged-in: You must be logged in.
@@ -23,6 +26,8 @@ en:
       thanks: "Thanks for applying!"
     acceptances:
       cannot: "Could not accept the invitation"
+    projects:
+      hide-reason-required: You must supply a reason a to hide a project
   layouts:
     application:
       main-header: The Awesome Foundation
@@ -48,6 +53,7 @@ en:
       edit-profile: Edit My Profile
       edit-chapter-profile: Edit Chapter Profile
       view-all-users: View all Users
+      trustee-resources: Trustee Resources
   home:
     index:
       title: Forwarding the interest of Awesome in the universe, $1,000 at a time.
@@ -57,8 +63,8 @@ en:
         body-html: "Have a crazy brilliant idea that needs funding? We award <strong>$1,000 grants every month</strong>. It couldn't be simpler! Your idea is yours alone. We don't want a stake in it. We just want to help you make it happen!"
       call-to-action: Apply now for an Awesome Foundation grant!
       who:
-        header: Awesome is Everywhere!
-        body: The Awesome Foundation for the Arts and Sciences is an ever-growing, worldwide network of people devoted to forwarding the interest of awesomeness in the universe. Created in the long hot summer days of 2009 in Boston, the Foundation distributes a series of monthly $1,000 grants to projects and their creators. The money is pooled together from the coffers of ten or so self-organizing “micro-trustees” and given upfront in cash, check, or gold doubloons. The chapters are autonomous and organized by the trustees around geographic areas or topics of interest.
+        header: Awesome is everywhere!
+        body: The Awesome Foundation is an ever-growing worldwide community devoted to forwarding the interest of awesome in the universe. Created in the long hot summer days of 2009 in Boston, the Foundation distributes $1,000 grants, no strings attached, to projects and their creators. At each fully autonomous chapter, the money is pooled together from the coffers of ten or so self-organizing “micro-trustees” and given up front in cash, check, or gold doubloons.
       news:
         header: Awesome News!
         recent: Recent blog posts
@@ -80,6 +86,8 @@ en:
         about: About Us
         news: "%{name} News"
       apply-for-grant: Apply For a Grant
+      inactive-chapter: This chapter is currently inactive.
+      inactive-chapter-reason: An inactive chapter is one that has not given a grant in six months. If you are interested in re-starting this chapter, please <a href="mailto:join@awesomefoundation.org">contact us</a>.
     edit:
       title: Edit chapter information
     new:
@@ -95,6 +103,7 @@ en:
         id: ID
         votes: Votes
   projects:
+    wait-for-uploads-to-complete: Please wait for your images to finish uploading before submitting your application.
     project:
       awesome: Awesome
       delete: Delete this project
@@ -109,13 +118,22 @@ en:
       not-answered: Not Answered
       images: "Images:"
       image: "Image #%{index}"
+      hide: Hide
+      unhide: Unhide
+      consider-hiding: Not an appropriate grant?
+      hide-reason: Why is this not appropriate?
+      hidden-details: "Hidden by %{username} on %{hidden_at} because %{reason}."
+      hiding-explanation: "Hiding a project will hide its details from everyone; the title and why it was hidden will still be visible, and it can be easily unhidden."
+      unhiding-explanation: "Restore this project so everyone will be able to see it again."
     new:
       title: Are you ready to get Awesome!?
-      description: Just fill out the application below with information about your self and the details of your project.
+      description: Just fill out the application below with information about yourself and the details of your project.
       apply: Apply
     form:
       save: Save
-      image-notes: The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
+      image-notes: The top image is set as the cover image. Images will be resized to %{dimensions} pixels. If you get an error message, please try again with fewer or smaller files.
+      use-classic-uploader: Switch to the classic uploader
+      use-default-uploader: Switch to the default uploader
     index:
       filter-button: Filter
       search: search
@@ -175,18 +193,9 @@ en:
       title_tag: About Us
       meta_description: About the Awesome Foundation
       meta_keywords:
-      headline: "The Awesome Foundation"
-      sub_headline: "For the Arts and Sciences and the advancement of Awesomeness in the universe."
-      our-story-title: Our Story
-      our-story: "<p>We are an ever-growing, worldwide network of people devoted to forwarding the interest of awesomeness in the universe. Created in the long hot summer days of 2009 in Boston, the Foundation distributes a series of monthly $1,000 grants to projects and their creators. The money is pooled together from the coffers of ten or so self-organizing “micro-trustees” and given upfront in cash, check, or gold doubloons. The chapters are autonomous and organized by the trustees around geographic areas or topics of interest.</p>
-    <p>The Foundation provides these grants with no strings attached and claims no ownership over the projects it supports. It is, in the words of one of our trustees, a micro-genius grant for flashes of micro-brilliance.</p>
-    <p>Since its humble beginnings, many <a href=\"http://awesomefoundation.org/chapters/\">Awesome Foundation chapters have sprung up globally</a> to conserve, sustain, and support the worldwide ecosystem of awesomeness. Projects have included efforts in a wide range of areas including technology, arts, social good, and beyond.</p>
-    <p><a href=\"http://www.youtube.com/watch?v=PPoYzyOn44M\">We’re still waiting for something with dinosaurs (hint, hint)</a>.</p>"
-      contact-title: Contact Us
-      contact: "<p>You can drop us an email at <a href=\"mailto:contact@awesomefoundation.org\">contact@awesomefoundation.org</a>, follow us on Twitter at <a href=\"http://twitter.com/awesomefound\">@awesomefound</a>, or track us on Facebook <a href=\"http://www.facebook.com/awesomefoundation\">here</a>. If you’re interested in helping to start a chapter or joining an existing one if a spot opens up, great! <a href=\"http://spreadsheets2.google.com/a/awesomefoundation.org/viewform?hl=en&formkey=dFJwaXhNTFp6VG40clU3cFVfWFk0bXc6MQ\">Tell us about yourself here!</a></p>"
     faq:
-      headline: Super awesome info
-      sub_headline: Everything you need to know about advancing awesomeness.
+      title_tag: FAQ
+      headline: Frequently Asked Questions
   simple_form:
     labels:
       project:
@@ -202,6 +211,8 @@ en:
         about_me: Tell us a little about yourself
         about_project: Tell us about your awesome project!
         use_for_money: How will you use the money?
+        funded_on: Funded On
+        funded_description: Funded Description
       chapter:
         name: Name
         slug: Name in the URL
@@ -213,6 +224,7 @@ en:
         extra_question_1: Extra question 1
         extra_question_2: Extra question 2
         extra_question_3: Extra question 3
+        inactive: This chapter is inactive
         submit: Submit
       user:
         first_name: First name

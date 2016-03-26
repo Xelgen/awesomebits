@@ -4,7 +4,10 @@ pt:
     separator: ","
   date:
     formats:
-      funding: "%B, %Y"
+      default: "%Y-%m-%d"
+      funding: "%B %Y"
+  word:
+    inactive: Inativo
   flash:
     permissions:
       must-be-logged-in: Você deve estar autenticado.
@@ -48,6 +51,7 @@ pt:
       edit-profile: Editar Meu Perfil
       edit-chapter-profile: Editar Perfil do Capítulo
       view-all-users: Ver Todos os Usuários
+      trustee-resources: Recursos para Curadores
   home:
     index:
       title: Tornando o universo mais irado, $1.000 de cada vez.
@@ -80,6 +84,8 @@ pt:
         about: Sobre Nós
         news: "Notícias do capítulo %{name}"
       apply-for-grant: Envie Sua Proposta
+      inactive-chapter: Este capítulo está inativo.
+      inactive-chapter-reason: Um capítulo é considerado inativo quando não tiver apoiado projetos em um período de seis meses. Se você estiver interessado em reiniciar este capítulo, por favor <a href="mailto:join@awesomefoundation.org">entre em contato</a>.
     edit:
       title: Editar informações do capítulo
     new:
@@ -95,6 +101,7 @@ pt:
         id: ID
         votes: Votos
   projects:
+    wait-for-uploads-to-complete: Por favor aguarde o upload de suas imagens terminar antes de submeter seu application.
     project:
       awesome: Awesome
       delete: Excluir este projeto
@@ -115,7 +122,9 @@ pt:
       apply: "Enviar"
     form:
       save: Salvar
-      image-notes: A primeira imagem é usada como imagem de capa. As imagens serão redimensionadas para %{dimensions} pixels.
+      image-notes: A primeira imagem é usada como imagem de capa. As imagens serão redimensionadas para %{dimensions} pixels. Se você receber uma mensagem de erro, por favor tente novamente com menos arquivos ou arquivos menores.
+      use-classic-uploader: Troque para o upload clássico
+      use-default-uploader: Troque para o upload padrão
     index:
       filter-button: Filtrar
       search: buscar
@@ -151,7 +160,7 @@ pt:
     user:
       promote_to_dean: Tornar Decano
       demote_to_trustee: Retornar a Curador
-      demote_admin: Conceder Administração 
+      demote_admin: Conceder Administração
       promote_admin: Revogar Administração
       error_dean_promotion: Falha na promoção a decano
       error_dean_demotion: Falha no retorno a curador
@@ -175,18 +184,9 @@ pt:
       title_tag: Sobre Nós
       meta_description: Sobre a Awesome Foundation
       meta_keywords:
-      headline: "A Awesome Foundation"
-      sub_headline: "Pelas Artes e Ciências e para tornar o universo mais irado."
-      our-story-title: Nossa história
-      our-story: "<p>Somos uma rede mundial, em franca expansão, de pessoas dedicadas a tornar o universo mais irado. Criada nos longos e quentes dias do verão de 2009 em Boston, a fundação distribui séries de apoios financeiros mensais de $1,000 a projetos e seus criadores. O dinheiro vem direto dos cofres de dez membros “micro-curadores” auto-organizados e doados em dinheiro, cheque ou moedas de ouro. Os capítulos são autônomos e organizados pelos curadores, organizados por áreas geográficas ou por tópicos de interesse.</p>
-    <p>A Fundação oferece estes apoios financeiros sem compromisso e sem obter qualquer participação nos projetos apoiados. Isto é, nas palavras de um de nossos curadores, um mini-apoio genial a lampejos de brilhantismo.</p>
-    <p>Desde sua humilde origem, muitos <a href=\"http://awesomefoundation.org/chapters/\">capítulos da Awesome Foundation floresceram mundialmente</a> para conservar, manter, e apoiar o ecosistema global do irado. Projetos tem envidado esforços numa ampla gama de áreas incluindo tecnologia, artes, bem social, e além.</p>
-    <p><a href=\"http://www.youtube.com/watch?v=PPoYzyOn44M\">Ainda estamos esperando por algo ligado a dinossauros (não é uma dica... ou é?)</a>.</p>"
-      contact-title: Contactar-nos
-      contact: "<p>Você pode nos deixar um e-mail em <a href=\"mailto:contact@awesomefoundation.org\">contact@awesomefoundation.org</a>, nos seguir no Twitter em <a href=\"http://twitter.com/awesomefound\">@awesomefound</a>, ou nos acompanhar no Facebook <a href=\"http://www.facebook.com/awesomefoundation\">aqui</a>. Se você estiver interessado em ajudar a iniciar um capítulo ou juntar-se a algum quando abrir uma vaga, beleza! <a href=\"http://spreadsheets2.google.com/a/awesomefoundation.org/viewform?hl=en&formkey=dFJwaXhNTFp6VG40clU3cFVfWFk0bXc6MQ\">Fale-nos sobre você aqui!</a></p>"
     faq:
+      title_tag: Perguntas Frequentes
       headline: Informações super iradas
-      sub_headline: Tudo o que você precisa saber sobre tornar irado.
   simple_form:
     labels:
       project:
@@ -213,6 +213,7 @@ pt:
         extra_question_1: Questão extra 1
         extra_question_2: Questão extra 2
         extra_question_3: Questão extra 3
+        inactive: Este capítulo está inativo
         submit: Enviar
       user:
         first_name: Nome

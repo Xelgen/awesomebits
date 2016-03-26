@@ -5,8 +5,15 @@ Awesomefoundation::Application.routes.draw do
   match "/blog/*path"    => redirect { |params, request| "http://blog.awesomefoundation.org/#{params[:path]}" }, :format => false
   match "/apply"         => redirect("/en/submissions/new")
 
-  scope "(:locale)", :locale => /en|pt|fr/ do
+  resources :passwords, :controller => 'clearance/passwords', :only => [:new, :create]
+
+  resources :users, :shallow => true do
+    resource :password, :controller => 'clearance/passwords', :only => [:create, :edit, :update]
+  end
+
+  scope "(:locale)", :locale => /en|es|fr|pt|ru/ do
     resource  :session, controller: :sessions, only: [:new, :create, :destroy]
+
     match "sign_in",  :to => "sessions#new"
     match "sign_out", :to => "sessions#destroy", :via => :delete
 
@@ -25,6 +32,10 @@ Awesomefoundation::Application.routes.draw do
     end
 
     resources :projects do
+      member do
+        put "hide"
+        put "unhide"
+      end
       resource :winner, :only => [:create, :destroy]
       resource :vote, :only => [:create, :destroy]
     end
@@ -43,4 +54,13 @@ Awesomefoundation::Application.routes.draw do
   end
 
   match "/404", :to => "errors#not_found"
+
+  # With the catchall route, explicitly mount Evergreen
+  if Rails.env.development? || Rails.env.test?
+    mount Evergreen::Application, :at => '/evergreen'
+  end
+
+  # All other routes are considered 404s. ActionController::RoutingError
+  # will catch them, but that fills our logs with noisy exceptions.
+  match '*url', :to => 'errors#not_found', :via => [:get]
 end

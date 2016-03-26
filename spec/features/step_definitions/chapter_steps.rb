@@ -1,13 +1,13 @@
 step 'I create a new chapter' do
   click_link("Create a Chapter")
   @chapter_name = "Another Awesome Chapter"
-  fill_in("Name", :with => @chapter_name)
+  fill_in("chapter_name", :with => @chapter_name)
   fill_in("Twitter URL", :with => "http://twitter.com/awesomefound")
   fill_in("Facebook URL", :with => "http://twitter.com/awesomefound")
   fill_in("Blog URL", :with => "http://twitter.com/awesomefound")
   fill_in("RSS Feed URL", :with => "http://awesomefoundation.org/blog/feed/")
   fill_in("Description", :with => "http://twitter.com/awesomefound")
-  select("United States", :from => "Country")
+  select("United States", :from => "Country", match: :first)
   click_button("Create Chapter")
 end
 
@@ -25,7 +25,7 @@ step 'I should see the new chapter form with errors' do
 end
 
 step 'there is a chapter in the system' do
-  @current_chapter = create(:chapter, :rss_feed_url => Rails.root.join('spec', 'support', 'feed.xml').to_s)
+  @current_chapter = FactoryGirl.create(:chapter, :rss_feed_url => Rails.root.join('spec', 'support', 'feed.xml').to_s)
 end
 
 step 'I go to the chapter page' do
@@ -63,7 +63,7 @@ end
 
 step 'I edit a chapter' do
   visit(chapters_url)
-  click_link(@current_chapter.name)
+  click_link(@current_chapter.name, match: :first)
   click_link('Edit Chapter')
   @new_chapter_name = "Montecito"
   @new_twitter_url = "http://twitter.com/awesomefound"
@@ -72,7 +72,7 @@ step 'I edit a chapter' do
   @new_blog_url = "http://blog.com/awesomefound"
   @new_rss_feed_url = "http://rss.com/awesomefound"
   @new_description = "This is a description of the chapter."
-  fill_in("Name",           :with => @new_chapter_name)
+  fill_in("chapter_name",   :with => @new_chapter_name)
   fill_in("Twitter URL",    :with => @new_twitter_url)
   fill_in("Facebook URL",   :with => @new_facebook_url)
   fill_in("Email Address",  :with => @new_email_address)
@@ -101,7 +101,7 @@ step 'I should see a permissions error' do
 end
 
 step 'there are 5 chapters' do
-  @chapters = (1..5).map{ create(:chapter) }
+  @chapters = (1..5).map{ FactoryGirl.create(:chapter) }
 end
 
 step "those projects' chapters are in 4 countries total" do
@@ -115,7 +115,7 @@ step 'I should see those 5 chapters' do
   end
 end
 
-step 'I should see that the 6 chapters, including Any, are spread across 4 countries' do
-  page.should have_css(".who-where h2 .chapters:contains('6')")
+step 'I should see that the 5 chapters, not including Any, are spread across 4 countries' do
+  page.should have_css(".who-where h2 .chapters:contains('5')")
   page.should have_css(".who-where h2 .countries:contains('4')")
 end

@@ -7,6 +7,10 @@ FactoryGirl.define do
     name { "Chapter for Generic Location ##{FactoryGirl.generate(:index)}" }
     description { "This is a description." }
     country { "United States" }
+
+    factory :inactive_chapter do
+      inactive_at { Time.zone.now }
+    end
   end
 
   factory :user, :aliases => [:inviter, :invitee] do
@@ -72,5 +76,9 @@ FactoryGirl.define do
   factory :photo do
     project
     image { File.new(Rails.root.join("spec", "support", "fixtures", "1.JPG")) }
+
+    factory :utf8_photo do
+      image { File.new(Rails.root.join("spec", "support", "fixtures", "מדהים.png"))}
+    end
   end
 end

@@ -1,3 +1,6 @@
+<div class="project-section chapter-select">
+  <%= form.input :chapter_id, :collection => Chapter.select_data(@project.new_record? ? :active : :all), :prompt => '- Select -', :as => :grouped_select, :group_method => :chapters, :group_label_method => :name, :label_method => :name %>
+</div>
 <div class="personal-info">
   <%= form.input :name %>
   <%= form.input :email %>
@@ -5,13 +8,9 @@
 </div>
 <div class="project-info">
   <%= form.input :title, :maxlength => 50 %>
-  <%= form.input :url %>
+  <%= form.input :url, :as => :string %>
 </div>
 <div class="descriptions">
-  <%= form.input :about_me, :maxlength => 500, :input_html => { :class => "about-me" }, :disabled => !form.object.new_record?  %>
-  <div class="chars_left">
-    You have <span id="project_about_me_chars_left">500</span> chars left
-  </div>
   <%= form.input :about_project, :maxlength => 2000, :input_html => { :class => "project-desc" }, :disabled => !form.object.new_record? %>
   <div class="chars_left">
     You have <span id="project_about_project_chars_left">2000</span> chars left
@@ -20,7 +19,12 @@
   <div class="chars_left">
     You have <span id="project_use_for_money_chars_left">500</span> chars left
   </div>
+  <%= form.input :about_me, :maxlength => 500, :input_html => { :class => "about-me" }, :disabled => !form.object.new_record?  %>
+  <div class="chars_left">
+    You have <span id="project_about_me_chars_left">500</span> chars left
+  </div>
 </div>
+
 <div class="image-upload">
   <% if form.object.photos.present? %>
     <section class="current-images">
@@ -36,18 +40,15 @@
       </ul>
     </section>
   <% end %>
-  <div class="input file optional">
-    <label class="file optional"><%= t "simple_form.labels.project.new_photos-html" %></label>
-    <div class="multi-input first noremove" data-num-files="5">
-      <input class="file optional multi new_photo" id="project_new_photos" name="project[new_photos][]" type="file" value="" accept="image/*">
-      <a href="#" class="remove-image" data-remove="true">remove</a>
-    </div>
 
-    <div><%= t(".image-notes", :dimensions => Photo::MAIN_DIMENSIONS) %></div>
+  <% if s3_uploader_available? %>
+    <%= render :partial => "image_form", :locals => { :form => form, :upload_mechanism => :s3 } %>
+  <% else %>
+    <%= render :partial => "image_form", :locals => { :form => form, :upload_mechanism => :classic } %>
+  <% end %>
 
-  </div>
 </div>
-<%= form.input :chapter_id, :collection => Chapter.select_data, :prompt => '- Select -', :as => :grouped_select, :group_method => :chapters, :group_label_method => :name, :label_method => :name %>
+
 <div class="extra-questions" style="display:none">
   <%= form.input :extra_question_1, :as => :hidden, :wrapper_html => {:class => "extra-question"}  %>
   <%= form.input :extra_question_2, :as => :hidden, :wrapper_html => {:class => "extra-question"}  %>
@@ -66,13 +67,15 @@
     <%= form.input :funded_description %>
   </div>
 
-  <%= form.input :rss_feed_url %>
+  <%= form.input :rss_feed_url, :as => :string %>
 
 <% end %>
 
 
 <% content_for :javascript do %>
   <%= javascript_tag do %>
+    window.awesomeEnvironment.remainingUploads = 0;
+
     $(window).load(function(){
       $('#project_funded_on').datepicker({dateFormat: 'yy-mm-dd', onClose: function(){ $('#project_funded_on').blur() }});
 

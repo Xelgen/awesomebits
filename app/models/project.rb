@@ -2,6 +2,7 @@ require "texticle/searchable"
 
 class Project < ActiveRecord::Base
   belongs_to :chapter
+  belongs_to :hidden_by_user, class_name: "User"
   has_many :votes
   has_many :users, :through => :votes
   has_many :photos, :order => "photos.sort_order asc, photos.id asc"
@@ -9,9 +10,11 @@ class Project < ActiveRecord::Base
   attr_accessible :name, :title, :url, :email, :phone, :about_me, :about_project,
                   :chapter_id, :extra_question_1, :extra_question_2, :extra_question_3,
                   :extra_answer_1, :extra_answer_2, :extra_answer_3,
-                  :new_photos, :photo_order, :rss_feed_url, :use_for_money, :funded_on, :funded_description
+                  :new_photos, :photo_order, :rss_feed_url, :use_for_money, :funded_on, :funded_description,
+                  :new_photo_direct_upload_urls,
+                  :hidden_by_user_id, :hidden_reason, :hidden_at
 
-  before_validation :ensure_valid_urls
+  before_validation UrlNormalizer.new(:url, :rss_feed_url)
 
   validates_presence_of :name
   validates_presence_of :title
@@ -25,6 +28,7 @@ class Project < ActiveRecord::Base
 
   before_save :ensure_funded_description
 
+  # For dependency injection
   cattr_accessor :mailer
   self.mailer = ProjectMailer
 
@@ -47,10 +51,17 @@ class Project < ActiveRecord::Base
   end
 
   def self.during_timeframe(start_date, end_date)
+    # FIXME the database stores dates in UTC, whereas we parse the dates
+    # provided in the local zone. This can result in mismatches when the
+    # overlap crosses midnight.
     start_date = 100.years.ago.strftime('%Y-%m-%d') if start_date.blank?
     end_date   = Time.zone.now.strftime('%Y-%m-%d') if end_date.blank?
 
-    where("projects.created_at BETWEEN ? AND ?", Time.zone.parse(start_date), Time.zone.parse(end_date) + 1.day)
+    where(
+      "projects.created_at > ? AND projects.created_at < ?",
+      Time.zone.parse(start_date),
+      Time.zone.parse(end_date) + 1.day
+    )
   end
 
   def self.by_vote_count
@@ -61,7 +72,8 @@ class Project < ActiveRecord::Base
   end
 
   def self.recent_winners
-    where('projects.funded_on is not null').order(:funded_on).reverse_order
+    subquery = select("DISTINCT ON (chapter_id) projects.*").where("projects.funded_on IS NOT NULL").order(:chapter_id, :funded_on).reverse_order
+    select("*").from("(#{subquery.to_sql}) AS distinct_chapters").order(:funded_on).reverse_order
   end
 
   def self.csv_export(projects)
@@ -129,9 +141,22 @@ class Project < ActiveRecord::Base
 
   def new_photos=(photos)
     photos.each do |photo|
-      new_photo = self.photos.build(:image => photo)
-      if persisted?
-        new_photo.save
+      if photo.present?
+        new_photo = self.photos.build(:image => photo)
+        if persisted?
+          new_photo.save
+        end
+      end
+    end
+  end
+
+  def new_photo_direct_upload_urls=(urls)
+    urls.each do |url|
+      if url.present?
+        new_photo = self.photos.build(:direct_upload_url => url)
+        if persisted?
+          new_photo.save
+        end
       end
     end
   end
@@ -156,7 +181,7 @@ class Project < ActiveRecord::Base
     was_new_record = new_record?
     saved = super
     if saved && was_new_record
-      mailer.new_application(self).deliver
+      ProjectMailerJob.new.async.perform(self)
     end
     saved
   end
@@ -169,18 +194,27 @@ class Project < ActiveRecord::Base
     (answer = read_attribute("extra_answer_#{num}".to_sym)) && answer.present? ? answer : nil
   end
 
-  protected
-
-  # before validation
-  def ensure_valid_urls
-    if url.present? && ! url.match(/:\/\//)
-      self.url = "http://#{url}"
-    end
-
-    if rss_feed_url.present? && ! rss_feed_url.match(/:\/\//)
-      self.rss_feed_url = "http://#{rss_feed_url}"
-    end     
+  def hide!(reason, user)
+    update_attributes(
+      hidden_reason: reason,
+      hidden_by_user_id: user.id,
+      hidden_at: Time.zone.now
+    )
   end
+
+  def unhide!
+    update_attributes(
+      hidden_reason: nil,
+      hidden_by_user_id: nil,
+      hidden_at: nil
+    )
+  end
+
+  def hidden?
+    !!hidden_at
+  end
+
+  protected
 
   # before save
   def ensure_funded_description

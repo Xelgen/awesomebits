@@ -1,11 +1,11 @@
 step "there is a trustee in the system" do
-  @trustee_role     = create(:role, :name => 'trustee')
+  @trustee_role     = FactoryGirl.create(:role, :name => 'trustee')
   @trustee          = @trustee_role.user
   @trustee_chapter  = @trustee_role.chapter
 end
 
 step "there is another trustee in the system" do
-  @another_trustee_role    = create(:role, :name => "trustee")
+  @another_trustee_role    = FactoryGirl.create(:role, :name => "trustee")
   @another_trustee         = @another_trustee_role.user
   @another_trustee_chapter = @another_trustee_role.chapter
 end
@@ -64,7 +64,7 @@ step "I update my password" do
   @updated_password = "BaxterRocks"
   visit chapter_projects_path(@current_chapter)
   click_link("Edit My Profile")
-  fill_in("New password", :with => @updated_password)
+  fill_in("user_new_password", :with => @updated_password)
   click_button("Update User")
 end
 

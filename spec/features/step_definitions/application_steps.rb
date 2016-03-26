@@ -6,7 +6,7 @@ step 'I am on the homepage' do
   visit(root_url)
 end
 
-step 'I submit a project to the :name chapter' do
+step 'I submit a project to the :name chapter' do |name|
   click_link("Apply")
   step 'I fill in the application form'
   click_button("Apply")
@@ -33,7 +33,7 @@ step 'I should see them on the application form' do
   click_button("Apply")
 end
 
-step 'I submit a project to the :name chapter with the extra questions answered' do
+step 'I submit a project to the :name chapter with the extra questions answered' do |name|
   @project_title = "Crusades!"
   click_link("Apply")
   fill_in("Your name", :with => "Arthur")
@@ -55,7 +55,7 @@ step 'I submit a project to the :name chapter with the extra questions answered'
 end
 
 step 'I should be thanked' do
-  page.should show_the_flash("thanks").containing("Thanks for applying")
+  page.should show_the_flash("thanks")
 end
 
 step 'I should get an email telling me the application went through' do
@@ -65,7 +65,7 @@ step 'I should get an email telling me the application went through' do
   deliveries.should have(1).item
 end
 
-step 'I submit a project to the :name chapter, but it fails' do
+step 'I submit a project to the :name chapter, but it fails' do |name|
   click_link("Apply")
   click_button("Apply")
 end

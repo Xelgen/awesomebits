@@ -1,11 +1,11 @@
 step 'I invite a new trustee to the :name chapter' do |name|
-  @chapter = create(:chapter, :name => name)
+  @chapter = FactoryGirl.create(:chapter, :name => name)
   visit projects_path
   click_link("Invite a Trustee")
   fill_in("First name", :with => "Joe")
   fill_in("Last name", :with => "Schmoe")
   select(@chapter.name, :from => "Select a chapter")
-  @invitation_address = generate(:email)
+  @invitation_address = FactoryGirl.generate(:email)
   fill_in("Email", :with => @invitation_address)
   click_button("Invite")
 end
@@ -21,18 +21,18 @@ step 'I invite the same trustee to the :name chapter' do |name|
 end
 
 step 'I invite a new trustee to a different chapter' do |name|
-  @chapter = create(:chapter)
+  @chapter = FactoryGirl.create(:chapter)
   visit projects_path
   click_link("Invite a Trustee")
   fill_in("First name", :with => "Joe")
   fill_in("Last name", :with => "Schmoe")
   select(@chapter.name, :from => "Select a chapter")
-  @invitation_address = generate(:email)
+  @invitation_address = FactoryGirl.generate(:email)
   fill_in("Email", :with => @invitation_address)
   click_button("Invite")
 end
 
-step 'I try to invite a new trustee to my chapter anyway' do |name|
+step 'I try to invite a new trustee to my chapter anyway' do
   visit new_invitation_path
 end
 
@@ -48,18 +48,18 @@ step 'I should not see a link to invite other trustees' do
   page.should have_no_css(".admin-panel a:contains('Invite a trustee')")
 end
 
-step 'I invite a new trustee to my chapter' do |name|
+step 'I invite a new trustee to my chapter' do
   visit projects_path
   click_link("Invite a Trustee")
   fill_in("First name", :with => "Joe")
   fill_in("Last name", :with => "Schmoe")
-  @invitation_address = generate(:email)
+  @invitation_address = FactoryGirl.generate(:email)
   fill_in("Email", :with => @invitation_address)
   click_button("Invite")
 end
 
 step 'I try to invite a new trustee to a chapter I am not dean of' do
-  @inaccessible_chapter = create(:chapter)
+  @inaccessible_chapter = FactoryGirl.create(:chapter)
   visit new_invitation_path
 end
 
