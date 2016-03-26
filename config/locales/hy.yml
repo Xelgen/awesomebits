@@ -53,7 +53,7 @@ hy:
       edit-profile: "Խմբագրել իմ էջը"
       edit-chapter-profile: "Խմբագրել մասնաճյուղի էջը" //"Edit Chapter Profile"
       view-all-users: "Դիտել բոլոր անդամներին" //"View all Users"
-      trustee-resources: Հոգաբարձույի ռեսուրսներ//Trustee Resources
+      trustee-resources: Հոգաբարձուների ռեսուրսներ//Trustee Resources
   home:
     index:
       title: //Forwarding the interest of Awesome in the universe, $1,000 at a time.
@@ -87,7 +87,7 @@ hy:
         news: "%{name} նորություններ"//"%{name} News"
       apply-for-grant: "Դիմել դրամաշհնորհի"//"Apply For a Grant"	  
       inactive-chapter: Այս մասնաճյուղը ներկայումս ակտիվ չէ։
-      inactive-chapter-reason: "Ոչ ակտիվ է համարվում այն մասնաճյուղը, որը դրամաշնորհ չի հատկացրել վերջին 6 ամսվա ընթացքում։ Եթե հետաքրքված եք այս մասնաճյուղը վերամեկնարկելու մեջ, ապա <a href="mailto:join@awesomefoundation.org">կապվեք մեր հետ</a>։"// An inactive chapter is one that has not given a grant in six months. If you are interested in re-starting this chapter, please <a href="mailto:join@awesomefoundation.org">contact us</a>.
+      inactive-chapter-reason: "Ոչ ակտիվ է համարվում այն մասնաճյուղը, որը դրամաշնորհ չի հատկացրել վերջին 6 ամսվա ընթացքում։ Եթե հետաքրքված եք այս մասնաճյուղը վերագործարկելու մեջ, ապա <a href="mailto:join@awesomefoundation.org">կապվեք մեր հետ</a>։"// An inactive chapter is one that has not given a grant in six months. If you are interested in re-starting this chapter, please <a href="mailto:join@awesomefoundation.org">contact us</a>.
     edit:
       title: "Խմբագրել մասնաճյուղի տվյալները" //"Edit chapter information"
     new:
@@ -103,7 +103,7 @@ hy:
         id: "Համար" //ID
         votes: "Քվե" //Votes
   projects:
-    wait-for-uploads-to-complete: Խնդրում ենք, սպասեք ձեր պատկերների վերբեռնման ավարտին մինչև ձեր առաջարկն ուղարկելը։//Please wait for your images to finish uploading before submitting your application.  
+    wait-for-uploads-to-complete: Խնդրում ենք սպասել ձեր պատկերների վերբեռնման ավարտին մինչև ձեր առաջարկն ուղարկելը։//Please wait for your images to finish uploading before submitting your application.  
     project:
       awesome: Awesome //Awesome
       delete: Ջնջել այս նախագիծը//Delete this project
@@ -171,10 +171,10 @@ hy:
       demote_to_trustee: Հեռացնել կառավարչի իրավունքները//Demote
       demote_admin: Հեռացնել ադմինի իրավունքները//Demote
       promote_admin: Նշանակել ադմին//Promote
-      error_dean_promotion: Չհաջողցեց նշանակել կառավարիչ//Dean promotion failed
-      error_dean_demotion: Չհաջողցեց հեռացնել կառավարիչներից//Dean demotion failed
-      error_admin_promotion: Չհաջողցեց նշանակել ադմինին//Admin promotion failed
-      error_admin_demotion: Չհաջողցեց հեռացնել ադմինին//Admin demotion failed
+      error_dean_promotion: Չհաջողվեց նշանակել կառավարիչ//Dean promotion failed
+      error_dean_demotion: Չհաջողվեց հեռացնել կառավարիչներից//Dean demotion failed
+      error_admin_promotion: Չհաջողվեց նշանակել ադմինին//Admin promotion failed
+      error_admin_demotion: Չհաջողվեց հեռացնել ադմինին//Admin demotion failed
       error_removing_user: Օգտվողին հեռացնելուց սխալ առաջացավ//Error removing user
       remove_from_chapter: Հեռացնել մասնաճյուղից//Remove
     edit:
@@ -240,10 +240,10 @@ hy:
         user_image: Նկար//User Image
     hints:
       project:
-        funded_description: Միայն տեսանելի կլինի դրամաշհնորհի ստացած նախագծի էջին //Only visible on the funded project page
-        rss_feed_url: //Links to posts from this feed will be displayed on the funded project page
+        funded_description: Տեսանելի կլինի միայն դրամաշհնորհ ստացած նախագծերի էջերում //Only visible on the funded project page
+        rss_feed_url: Այս RSS հոսքից գրառումները կցուցադրվեն դրամաշնորհ ստացած նախագծերի էջերում//Links to posts from this feed will be displayed on the funded project page
       user:
-        user_image: 'Տեղադրեք Ձեր նկարը <a href="https://en.gravatar.com/site/signup/%{email}" target="_blank">gravatar.com</a> վերը նշված էլ-փոստի համար' //'Set your user image at <a href="https://en.gravatar.com/site/signup/%{email}" target="_blank">gravatar.com</a> using your email address above'
+        user_image: 'Տեղադրեք Ձեր նկարը <a href="https://en.gravatar.com/site/signup/%{email}" target="_blank">gravatar.com</a> կայքում, վերը նշված էլ-փոստի հասցեյի համար' //'Set your user image at <a href="https://en.gravatar.com/site/signup/%{email}" target="_blank">gravatar.com</a> using your email address above'
   activerecord:
     errors:
       models:
