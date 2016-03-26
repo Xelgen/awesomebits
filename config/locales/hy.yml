@@ -46,14 +46,14 @@ hy:
     sidebar:
       projects: Նախագծեր
       finalists: Հաղթողներ
-      trustees: Trustees
+      trustees: Հոգաբարձուներ
       members: Անդամներ
       create-chapter: "Ստեղծել մասնաճյուղ"
-      invite-trustee: "Հրավիրել հովանավոր"
+      invite-trustee: "Հրավիրել hոգաբարձու"
       edit-profile: "Խմբագրել իմ էջը"
       edit-chapter-profile: "Խմբագրել մասնաճյուղի էջը" //"Edit Chapter Profile"
       view-all-users: "Դիտել բոլոր անդամներին" //"View all Users"
-      trustee-resources: Անդամների ռեսուրսներ//Trustee Resources
+      trustee-resources: Հոգաբարձույի ռեսուրսներ//Trustee Resources
   home:
     index:
       title: //Forwarding the interest of Awesome in the universe, $1,000 at a time.
@@ -82,12 +82,12 @@ hy:
       see_more: Տեսնել ավելին //See more Awesomeness
       byline: "Հեղինակ` %{name}"//"By %{name}"
       trustees:
-        header: Հովանավորներ //Meet the Trustees
+        header: Մեր հոգաբարձուները //Meet the Trustees
         about: Մեր մասին//About Us
         news: "%{name} նորություններ"//"%{name} News"
       apply-for-grant: "Դիմել դրամաշհնորհի"//"Apply For a Grant"	  
-      inactive-chapter: This chapter is currently inactive.
-      inactive-chapter-reason: An inactive chapter is one that has not given a grant in six months. If you are interested in re-starting this chapter, please <a href="mailto:join@awesomefoundation.org">contact us</a>.
+      inactive-chapter: Այս մասնաճյուղը ներկայումս ակտիվ չէ։
+      inactive-chapter-reason: "Ոչ ակտիվ է համարվում այն մասնաճյուղը, որը դրամաշնորհ չի հատկացրել վերջին 6 ամսվա ընթացքում։ Եթե հետաքրքված եք այս մասնաճյուղը վերամեկնարկելու մեջ, ապա <a href="mailto:join@awesomefoundation.org">կապվեք մեր հետ</a>։"// An inactive chapter is one that has not given a grant in six months. If you are interested in re-starting this chapter, please <a href="mailto:join@awesomefoundation.org">contact us</a>.
     edit:
       title: "Խմբագրել մասնաճյուղի տվյալները" //"Edit chapter information"
     new:
@@ -97,41 +97,41 @@ hy:
       title: "%{name}-ի ֆինալիստները"//"Finalists for %{name}"
       filter-button: "Զտել" //Filter
       start-date: "Սկսած"//start date
-      end-date: "Վերջացրած" //end date
+      end-date: "Մինչև" //end date
       table:
         title: "Անվանում" //Title
         id: "Համար" //ID
         votes: "Քվե" //Votes
   projects:
-    wait-for-uploads-to-complete: Please wait for your images to finish uploading before submitting your application.  
+    wait-for-uploads-to-complete: Խնդրում ենք, սպասեք ձեր պատկերների վերբեռնման ավարտին մինչև ձեր առաջարկն ուղարկելը։//Please wait for your images to finish uploading before submitting your application.  
     project:
       awesome: Awesome //Awesome
       delete: Ջնջել այս նախագիծը//Delete this project
       see-the-rest: "Կարդալ ավելին →"//"See the rest →"
       view-public-page: "Նայել հրապարակված էջը →" //"View the public page →"
       edit: "Խմբագրել նախագիծը"//"Edit Project →"
-      confirm-delete: "Համոզվա՞ծ եք"//"Really delete this?"
+      confirm-delete: "Համոզվա՞ծ եք, որ ուզում եք ջնջել սա"//"Really delete this?"
       winner: "%{name}-ի հաղթող"//"Winner for %{name}"
       about-me: "Մի փոքր իմ մասին:"//"A little about me:"
-      about-project: "Ահա իմ մտահղացումը:"//"Here's my idea:"
-      use-for-money: "Ինչպես կօգտագործեմ գումարը։"//"How I will use the money:"
+      about-project: "Ահա իմ մտահղացումը՝"//"Here's my idea:"
+      use-for-money: "Ինչպես կօգտագործեմ գումարը՝"//"How I will use the money:"
       not-answered: "Պատասխան չկա"//Not Answered
-      images: "Պատկերներ:"//"Images:"
+      images: "Պատկերներ՝"//"Images:"
       image: "Պատկեր #%{index}" //"Image #%{index}"
-      hide: Hide
-      unhide: Unhide
-      consider-hiding: Not an appropriate grant?
-      hide-reason: Why is this not appropriate?
-      hidden-details: "Hidden by %{username} on %{hidden_at} because %{reason}."
-      hiding-explanation: "Hiding a project will hide its details from everyone; the title and why it was hidden will still be visible, and it can be easily unhidden."
-      unhiding-explanation: "Restore this project so everyone will be able to see it again."    
+      hide: Թաքցնել//Hide
+      unhide: Չթաքցնել//Unhide
+      consider-hiding: Չհամապատասխանո՞ղ գաղափար է
+      hide-reason: Ո՞ր պահանջներին չի համապատասխանում այս գաղափարը//Why is this not appropriate?
+      hidden-details: "Թաքցված է %{username}–ի կողմից %{hidden_at}–ին, հետևյալ պատճառով՝ %{reason}։"//"Hidden by %{username} on %{hidden_at} because %{reason}."
+      hiding-explanation: "Նախագիծը թաքցնելուց հետո, նրա մանրամասները ոչ ոքու տեսանելի չեն լինի, սակայն կերևա վերնագիրը և թաքցման պատճառը։ Թաքցված նախագիծը, կարելի է հեշտությամբ նորից տեսանելի դարձնել։"// Hiding a project will hide its details from everyone; the title and why it was hidden will still be visible, and it can be easily unhidden."//"Hiding a project will hide its details from everyone; the title and why it was hidden will still be visible, and it can be easily unhidden."
+      unhiding-explanation: "Վերականգնել այս թաքցված նախագիծը և այն բոլորին տեսանելի դարձնել։"//"Restore this project so everyone will be able to see it again."
     new:
       title: "Դու պատրա՞ստ ես լինել Awesome" //"Are you ready to get Awesome!?"
-      description: Պարզապես լրացրու քո և նախագծի մանրամասների մասին://Just fill out the application below with information about yourself and the details of your project.
+      description: Պարզապես շարադրի քո և նախագծի մասին մանրամասները ստորև//Just fill out the application below with information about yourself and the details of your project.
       apply: Դիմել//Apply
     form:
       save: Հիշել //Save
-      image-notes: "Առաջին նկարը կդիտարկվի որպես գլխավոր նկար: Այն կհամապատասխանեցվի %{dimensions} չափին:"//The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
+      image-notes: "Առաջին պատկերը կերևա որպես հիմնական, շապիկի պատկեր: Այն կհամապատասխանեցվի %{dimensions} չափին:"//The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
       use-classic-uploader: Փոխարենը օգտագործել դասական վերբեռնիչը
       use-default-uploader: Փոխարենը օգտագործել լռելյայն վերբեռնիչը
     index:
@@ -145,14 +145,14 @@ hy:
       export-all-projects: "Արտահանել բոլորը նշված ժամանակաշրջանում"//"Export All From Date Range"
     public_show:
       edit: Խմբագրել նախագիծը//Edit Project
-      byline-html:"<span class='chapter-name'>%{chapter_name}</span> նախագիծը ստեղծված է <span class='project-starter'>%{submitter_name}-ի կողմից</span>" //"<span class='chapter-name'>%{chapter_name}</span> project created by <span class='project-starter'>%{submitter_name}</span>"
-      funder-html: "Ֆինանսավորվել է <span class='chapter-name'>%{name}</span>-ի կողմից" //"Funded by <span class='chapter-name'>%{name}</span>"
-      submitted-to-html: "Նախագիծը ուղարկված է <span class=''>%{name}</span> -ին" //"Project application submitted to <span class=''>%{name}</span>"
+      byline-html:"<span class='chapter-name'>%{chapter_name}</span> մասնաճյուղի նախագիծ, որը ստեղծված է <span class='project-starter'>%{submitter_name}-ի կողմից</span>"
+      funder-html: "Ֆինանսավորվել է <span class='chapter-name'>%{name}</span> մասնաճյուղի կողմից" //"Funded by <span class='chapter-name'>%{name}</span>"
+      submitted-to-html: "Նախագիծը ուղարկված է <span class=''>%{name}</span> մասնաճյուղին" //"Project application submitted to <span class=''>%{name}</span>"
       description:
         header: Նախագծի նկարագիրը//Project Description
-      feed-title: Վերջին պոստերը //Recent Posts
+      feed-title: Վերջին գրառումները //Recent Posts
     show:
-      back-to: 'Ետ դեպի <a href="%{url}">%{name}</a>'//'Back to <a href="%{url}">%{name}</a>'
+      back-to: 'Հետ դեպի <a href="%{url}">%{name}</a>'//'Back to <a href="%{url}">%{name}</a>'
   emails:
     invitation:
       subject: "Դուք ստացել եք հրավեր Awesome հիմնադրամի %{name} մասնաճյուղից"//"You have been invited to the %{name} chapter of the Awesome Foundation!"
@@ -162,21 +162,21 @@ hy:
       subject: Շնորհակալություն դիմելու համար//"Thanks for applying!"
   sessions:
     new:
-      sign-in: "Հովանավորների մուտք" //Trustee and Dean Sign In
-      intro: "Այս բաժինը նախատեսված է միայն հովանավորների համար: Եթե դուք հովանավոր եք, ապա դիմեք մասնաճյուղի կառավարչին` մուտքի համար"//"This section of the website is reserved for Awesome Foundation Trustees and Deans only. If you are a trustee and need access, please get in touch with your chapter's Dean directly."
+      sign-in: "Հոգաբարձուների մուտք" //Trustee and Dean Sign In
+      intro: "Այս բաժինը նախատեսված է միայն հոգաբարձուների համար: Եթե դուք հոգաբարձու եք, ապա դիմեք մասնաճյուղի կառավարչին` մուտքի համար"//"This section of the website is reserved for Awesome Foundation Trustees and Deans only. If you are a trustee and need access, please get in touch with your chapter's Dean directly."
       forgot-password: "Մոռացե՞լ եք գաղտնաբառը" //"Forgot your password?"
   users:
     user:
-      promote_to_dean: //Promote
-      demote_to_trustee: //Demote
-      demote_admin: //Demote
-      promote_admin: //Promote
-      error_dean_promotion: //Dean promotion failed
-      error_dean_demotion: //Dean demotion failed
-      error_admin_promotion: //Admin promotion failed
-      error_admin_demotion: //Admin demotion failed
-      error_removing_user: //Error removing user
-      remove_from_chapter: Հեռացնել//Remove
+      promote_to_dean: Նշանակել կառավարիչ//Promote
+      demote_to_trustee: Հեռացնել կառավարչի իրավունքները//Demote
+      demote_admin: Հեռացնել ադմինի իրավունքները//Demote
+      promote_admin: Նշանակել ադմին//Promote
+      error_dean_promotion: Չհաջողցեց նշանակել կառավարիչ//Dean promotion failed
+      error_dean_demotion: Չհաջողցեց հեռացնել կառավարիչներից//Dean demotion failed
+      error_admin_promotion: Չհաջողցեց նշանակել ադմինին//Admin promotion failed
+      error_admin_demotion: Չհաջողցեց հեռացնել ադմինին//Admin demotion failed
+      error_removing_user: Օգտվողին հեռացնելուց սխալ առաջացավ//Error removing user
+      remove_from_chapter: Հեռացնել մասնաճյուղից//Remove
     edit:
       title: Խմբագրել օգտագործողի տվյալները //Edit user information
     index:
