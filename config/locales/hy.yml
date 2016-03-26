@@ -4,7 +4,10 @@ hy:
     separator: "."
   date:
     formats:
-      funding: "%B, %Y"
+      default: "%Y-%m-%d"
+      funding: "%B %Y"
+  word:
+    inactive: Սառեցված
   flash:
     permissions:
       must-be-logged-in: "Դուք պետք է մուտք գործած լինեք։"//You must be logged in.
@@ -23,6 +26,8 @@ hy:
       thanks: "Շնորհակալությո՛ւն դիմելու համար։" //"Thanks for applying!"
     acceptances:
       cannot: "Հնարավոր չէ ընդունել հրավերը։" //"Could not accept the invitation"
+    projects:
+      hide-reason-required: "Նախագիծը թաքցնելու համար պարտադիր է նշել պատճառը"
   layouts:
     application:
       main-header: "Awesome Հիմնադրամ"//"The Awesome Foundation"
@@ -48,6 +53,7 @@ hy:
       edit-profile: "Խմբագրել իմ էջը"
       edit-chapter-profile: "Խմբագրել մասնաճյուղի էջը" //"Edit Chapter Profile"
       view-all-users: "Դիտել բոլոր անդամներին" //"View all Users"
+      trustee-resources: Անդամների ռեսուրսներ//Trustee Resources
   home:
     index:
       title: //Forwarding the interest of Awesome in the universe, $1,000 at a time.
@@ -79,7 +85,9 @@ hy:
         header: Հովանավորներ //Meet the Trustees
         about: Մեր մասին//About Us
         news: "%{name} նորություններ"//"%{name} News"
-      apply-for-grant: "Դիմել դրամաշհնորհի"//"Apply For a Grant"
+      apply-for-grant: "Դիմել դրամաշհնորհի"//"Apply For a Grant"	  
+      inactive-chapter: This chapter is currently inactive.
+      inactive-chapter-reason: An inactive chapter is one that has not given a grant in six months. If you are interested in re-starting this chapter, please <a href="mailto:join@awesomefoundation.org">contact us</a>.
     edit:
       title: "Խմբագրել մասնաճյուղի տվյալները" //"Edit chapter information"
     new:
@@ -95,6 +103,7 @@ hy:
         id: "Համար" //ID
         votes: "Քվե" //Votes
   projects:
+    wait-for-uploads-to-complete: Please wait for your images to finish uploading before submitting your application.  
     project:
       awesome: Awesome //Awesome
       delete: Ջնջել այս նախագիծը//Delete this project
@@ -109,13 +118,22 @@ hy:
       not-answered: "Պատասխան չկա"//Not Answered
       images: "Պատկերներ:"//"Images:"
       image: "Պատկեր #%{index}" //"Image #%{index}"
+      hide: Hide
+      unhide: Unhide
+      consider-hiding: Not an appropriate grant?
+      hide-reason: Why is this not appropriate?
+      hidden-details: "Hidden by %{username} on %{hidden_at} because %{reason}."
+      hiding-explanation: "Hiding a project will hide its details from everyone; the title and why it was hidden will still be visible, and it can be easily unhidden."
+      unhiding-explanation: "Restore this project so everyone will be able to see it again."    
     new:
       title: "Դու պատրա՞ստ ես լինել Awesome" //"Are you ready to get Awesome!?"
-      description: Պարզապես լրացրու քո և նախագծի մանրամասների մասին://Just fill out the application below with information about your self and the details of your project.
+      description: Պարզապես լրացրու քո և նախագծի մանրամասների մասին://Just fill out the application below with information about yourself and the details of your project.
       apply: Դիմել//Apply
     form:
       save: Հիշել //Save
       image-notes: "Արաջին նկարը կդիտարկվի որպես գլխավոր նկար: Այն կհամապատասխանեցվի %{dimensions} չափին:"//The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
+      use-classic-uploader: Փոխարենը օգտագործել դասական վերբեռնիչը
+      use-default-uploader: Փոխարենը օգտագործել լռելյայն վերբեռնիչը
     index:
       filter-button: "Զտել" //Filter
       search: "որոնել"//search
@@ -175,18 +193,9 @@ hy:
       title_tag: Մեր մասին//About Us
       meta_description: Awesome Հիմնադրամի մասին //About the Awesome Foundation
       meta_keywords:
-      headline: Awesome Հիմնադրամ//"The Awesome Foundation"
-      sub_headline: //"For the Arts and Sciences and the advancement of Awesomeness in the universe."
-      our-story-title: "Մեր պատմությունը"//"Our Story"
-      our-story: //"<p>We are an ever-growing, worldwide network of people devoted to forwarding the interest of awesomeness in the universe. Created in the long hot summer days of 2009 in Boston, the Foundation distributes a series of monthly $1,000 grants to projects and their creators. The money is pooled together from the coffers of ten or so self-organizing “micro-trustees” and given upfront in cash, check, or gold doubloons. The chapters are autonomous and organized by the trustees around geographic areas or topics of interest.</p>
-    <p>The Foundation provides these grants with no strings attached and claims no ownership over the projects it supports. It is, in the words of one of our trustees, a micro-genius grant for flashes of micro-brilliance.</p>
-    <p>Since its humble beginnings, many <a href=\"http://awesomefoundation.org/chapters/\">Awesome Foundation chapters have sprung up globally</a> to conserve, sustain, and support the worldwide ecosystem of awesomeness. Projects have included efforts in a wide range of areas including technology, arts, social good, and beyond.</p>
-    <p><a href=\"http://www.youtube.com/watch?v=PPoYzyOn44M\">We’re still waiting for something with dinosaurs (hint, hint)</a>.</p>"
-      contact-title: "Կապ" //"Contact Us"
-      contact: //"<p>You can drop us an email at <a href=\"mailto:contact@awesomefoundation.org\">contact@awesomefoundation.org</a>, follow us on Twitter at <a href=\"http://twitter.com/awesomefound\">@awesomefound</a>, or track us on Facebook <a href=\"http://www.facebook.com/awesomefoundation\">here</a>. If you’re interested in helping to start a chapter or joining an existing one if a spot opens up, great! <a href=\"http://spreadsheets2.google.com/a/awesomefoundation.org/viewform?hl=en&formkey=dFJwaXhNTFp6VG40clU3cFVfWFk0bXc6MQ\">Tell us about yourself here!</a></p>"
     faq:
-      headline: //Super awesome info
-      sub_headline: //Everything you need to know about advancing awesomeness.
+      title_tag: ՀՏՀ
+      headline: Հաճախ Տրվող Հարցեր
   simple_form:
     labels:
       project:
@@ -196,12 +205,14 @@ hy:
         title: Նախագծի անվանում//Project title
         url: Նախագծի կայք//Project website
         current_photos-html: "Բեռնված պատկերներ <span>(քաշեք հերթականությունը փոխելու համար)</span>" //"Current images <span>(drag to re-order)</span>"
-        new_photos-html: "Բեռնեք ձեր նապագծի պատկերները"//"Upload images of your project"
+        new_photos-html: "Բեռնեք ձեր նախագծի պատկերները"//"Upload images of your project"
         chapter_id: Ո՞ր մասնաճյուղին եք դիմում//Select chapter to apply to
         rss_feed_url: Նախագծի RSS ժապավեն//Project RSS feed url
         about_me: Մի փոքր պատմեք ձեր մասին//Tell us a little about yourself
         about_project: Պատմեք ձեր հոյակապ նախագծի մասին//Tell us about your awesome project!
         use_for_money: Ինչպե՞ս կօգտագործեք գումարը։//How will you use the money?
+        funded_on: Ֆինանսավորվել է
+        funded_description: Ֆինանսավորման նկարագրություն
       chapter:
         name: Անվանում//Name
         slug: Անվանում հասցեի մեջ//Name in the URL
@@ -213,6 +224,7 @@ hy:
         extra_question_1: Հավելյալ հարց 1//Extra question 1
         extra_question_2: Հավելյալ հարց 2//Extra question 2
         extra_question_3: Հավելյալ հարց 3//Extra question 3
+        inactive: Այս մասնաճյուղը չի գործում
         submit: Ուղարկել //Submit
       user:
         first_name: Անուն//First name
