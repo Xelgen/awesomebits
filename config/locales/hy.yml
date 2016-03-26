@@ -131,7 +131,7 @@ hy:
       apply: Դիմել//Apply
     form:
       save: Հիշել //Save
-      image-notes: "Արաջին նկարը կդիտարկվի որպես գլխավոր նկար: Այն կհամապատասխանեցվի %{dimensions} չափին:"//The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
+      image-notes: "Առաջին նկարը կդիտարկվի որպես գլխավոր նկար: Այն կհամապատասխանեցվի %{dimensions} չափին:"//The top image is set as the cover image. Images will be resized to %{dimensions} pixels.
       use-classic-uploader: Փոխարենը օգտագործել դասական վերբեռնիչը
       use-default-uploader: Փոխարենը օգտագործել լռելյայն վերբեռնիչը
     index:
